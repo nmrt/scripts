@@ -1,0 +1,2 @@
+synclient TouchpadOff=1
+wine skse_loader.exe >/tmp/wine.log 2>&1

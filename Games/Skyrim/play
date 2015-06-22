@@ -1,0 +1,18 @@
+#! /bin/bash
+
+#export WINEDEBUG=warn+all
+export WINEPREFIX=~/Games/Skyrim/
+export XINITRC=`dirname $0`/xinitrc
+
+cd $WINEPREFIX/drive_c/Program\ Files/TESV\ Skyrim\ LE/
+
+case $1 in
+  launcher)
+    wine SkyrimLauncher.exe
+    exit
+    ;;
+  fps) export WINEDEBUG=+fps;;
+esac
+
+#xinit $XINITRC -- :1 #-config sli.conf
+$XINITRC
